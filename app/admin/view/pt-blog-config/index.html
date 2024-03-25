@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <title>博客设置</title>
+    <link rel="stylesheet" href="/app/admin/component/pear/css/pear.css"/>
+    <link rel="stylesheet" href="/app/admin/component/jsoneditor/css/jsoneditor.css"/>
+    <link rel="stylesheet" href="/app/admin/admin/css/reset.css"/>
+
+</head>
+<body class="pear-container">
+<div class="layui-card">
+    <div class="layui-card-body">
+        <form class="layui-form" action="" onsubmit="return false">
+            <div class="layui-form-item">
+                <label class="layui-form-label">博客名称</label>
+                <div class="layui-input-block">
+                    <input type="text" name="name" placeholder="请输入博客名称 用于header头meta" autocomplete="off"
+                           class="layui-input">
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label">博客关键字</label>
+                <div class="layui-input-block">
+                    <input type="text" name="keyword" placeholder="请输入博客关键字 ; 分割 用于header头meta"
+                           autocomplete="off" class="layui-input">
+                </div>
+            </div>
+            <div class="layui-form-item layui-form-text">
+                <label class="layui-form-label">博客描述</label>
+                <div class="layui-input-block">
+                    <textarea name="description" placeholder="请输入博客描述 用于header头meta"
+                              class="layui-textarea"></textarea>
+                </div>
+            </div>
+            <div class="layui-form-item layui-form-text">
+                <label class="layui-form-label">版权说明html</label>
+                <div class="layui-input-block">
+                    <textarea name="copyright_html" placeholder="请输入copyright版本说明html"
+                              class="layui-textarea"></textarea>
+                </div>
+            </div>
+            <div class="layui-form-item layui-form-text">
+                <label class="layui-form-label">link链接html</label>
+                <div class="layui-input-block">
+                    <textarea name="link_html" placeholder="请输入link链接html 用于copyright上面的链接"
+                              class="layui-textarea"></textarea>
+                </div>
+            </div>
+            <div class="layui-form-item layui-form-text">
+                <label class="layui-form-label">文章底部统一说明</label>
+                <div class="layui-input-block">
+                    <textarea name="article_html" placeholder="请输入文章底部统一说明"
+                              class="layui-textarea"></textarea>
+                </div>
+            </div>
+            <div class="layui-form-item layui-form-text">
+                <label class="layui-form-label">项目说明html</label>
+                <div class="layui-input-block">
+                    <textarea name="project_html" placeholder="请输入项目说明html" class="layui-textarea"></textarea>
+                </div>
+            </div>
+            <div class="layui-form-item layui-form-text">
+                <label class="layui-form-label">友情链接说明html</label>
+                <div class="layui-input-block">
+                    <textarea name="site_html" placeholder="友情链接说明html" class="layui-textarea"></textarea>
+                </div>
+            </div>
+            <div class="layui-form-item layui-form-text">
+                <label class="layui-form-label">公共html</label>
+                <div class="layui-input-block">
+                    <textarea name="common_html"
+                              placeholder="请输入公共html 每个页面都会引入，可以放一些公共的html 比如百度统计等"
+                              class="layui-textarea"></textarea>
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label">作者网名</label>
+                <div class="layui-input-block">
+                    <input type="text" name="author-name" placeholder="请输入作者网名" autocomplete="off"
+                           class="layui-input">
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label">作者头像</label>
+                <div class="layui-input-block">
+                    <img class="img-3" src=""/>
+                    <input type="text" style="display:none" name="author-avatar" value=""/>
+                    <button type="button" class="pear-btn pear-btn-primary pear-btn-sm" id="author-avatar"
+                            permission="app.admin.upload.image">
+                        <i class="layui-icon layui-icon-upload"></i>上传文件
+                    </button>
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label">作者签名</label>
+                <div class="layui-input-block">
+                    <input type="text" name="author-sign" placeholder="请输入作者签名" autocomplete="off"
+                           class="layui-input">
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label">作者邮箱</label>
+                <div class="layui-input-block">
+                    <input type="text" name="author-email" placeholder="请输入作者邮箱" autocomplete="off"
+                           class="layui-input">
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label">作者地址</label>
+                <div class="layui-input-block">
+                    <input type="text" name="author-address" placeholder="请输入作者github用户名" autocomplete="off"
+                           class="layui-input">
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label">作者github</label>
+                <div class="layui-input-block">
+                    <input type="text" name="author-github" placeholder="请输入作者github" autocomplete="off"
+                           class="layui-input">
+                </div>
+            </div>
+            <div class="layui-form-item layui-form-text">
+                <label class="layui-form-label">个人说明html</label>
+                <div class="layui-input-block">
+                    <textarea name="author-html" placeholder="请输入个人说明html" class="layui-textarea"></textarea>
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label">github client_id</label>
+                <div class="layui-input-block">
+                    <input type="text" name="github-client_id" placeholder="请输入client_id" autocomplete="off"
+                           class="layui-input">
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label">github client_secret</label>
+                <div class="layui-input-block">
+                    <input type="text" name="github-client_secret" placeholder="请输入client_secret" autocomplete="off"
+                           class="layui-input">
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <div class="layui-input-block">
+                    <button class="pear-btn pear-btn-primary" lay-submit="" lay-filter="save">保存</button>
+                    <!--                    <button type="reset" class="pear-btn">重置</button>-->
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+<script src="/app/admin/component/layui/layui.js?v=2.8.12"></script>
+<script src="/app/admin/component/pear/pear.js"></script>
+<script src="/app/admin/component/jsoneditor/jsoneditor.js"></script>
+<script src="/app/admin/admin/js/permission.js"></script>
+
+<script>
+
+    // 相关接口
+    const PRIMARY_KEY = "id";
+    const SELECT_API = "/app/pt_blog/admin/pt-blog-config/select";
+    const UPDATE_API = "/app/pt_blog/admin/pt-blog-config/update";
+
+    // 获取数据库记录
+    layui.use(["form", "util", "popup"], function () {
+        let $ = layui.$;
+        $.ajax({
+            url: SELECT_API,
+            dataType: "json",
+            success: function (res) {
+
+                // 给表单初始化数据
+                layui.each(res.data, function (key, value) {
+                    let obj = $('*[name="' + key + '"]');
+                    if (key === "password") {
+                        obj.attr("placeholder", "不更新密码请留空");
+                        return;
+                    }
+                    if (typeof obj[0] === "undefined" || !obj[0].nodeName) return;
+                    if (obj[0].nodeName.toLowerCase() === "textarea") {
+                        obj.val(value);
+                    } else {
+                        obj.attr("value", value);
+                        obj[0].value = value;
+                    }
+                });
+
+                layui.use(["form", "upload"], function () {
+                    var form = layui.form;
+                    // 上传图片
+                    layui.use(['upload'], function () {
+                        let input = layui.$("#author-avatar").prev();
+                        input.prev().attr('src', input.val());
+                        layui.upload.render({
+                            elem: "#author-avatar",
+                            url: "/app/admin/upload/image",
+                            acceptMime: "image/gif,image/jpeg,image/jpg,image/png",
+                            field: "__file__",
+                            done: function (res) {
+                                this.item.prev().val(res.data.url).prev().attr('src', res.data.url);
+                            }
+                        });
+                    });
+
+                    // 提交表单
+                    form.on('submit(save)', function (data) {
+                        layui.$.ajax({
+                            url: UPDATE_API,
+                            type: "POST",
+                            dateType: "json",
+                            data: data.field,
+                            success: function (res) {
+                                if (res.code) {
+                                    return layui.popup.failure(res.msg);
+                                }
+                                return layui.popup.success("操作成功", function () {
+                                    parent.layer.close(parent.layer.getFrameIndex(window.name));
+                                });
+                            }
+                        });
+                        return false;
+                    });
+                });
+
+                // ajax返回失败
+                if (res.code) {
+                    layui.popup.failure(res.msg);
+                }
+
+            }
+        });
+    });
+</script>
+
+</body>
+
+</html>
