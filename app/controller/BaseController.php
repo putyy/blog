@@ -67,6 +67,7 @@ abstract class BaseController
             ->toArray();
         $cate = PtBlogArticleCate::orderByDesc('sort')
             ->orderByDesc('id')
+            ->where('is_show', '=', 1)
             ->select(['id', 'name'])
             ->get()
             ->toArray();

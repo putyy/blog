@@ -43,6 +43,13 @@
                 </div>
             </div>
 
+            <div class="layui-form-item">
+                <label class="layui-form-label">是否展示</label>
+                <div class="layui-input-block">
+                    <div name="is_show" id="is_show" value="1" ></div>
+                </div>
+            </div>
+
         </div>
     </div>
 
@@ -72,7 +79,7 @@
     const UPDATE_API = "/app/pt_blog/admin/pt-blog-article-cate/update";
 
     // 获取数据库记录
-    layui.use(["form", "util", "popup"], function () {
+    layui.use(["form", "util", "jquery", "xmSelect", "popup"], function () {
         let $ = layui.$;
         $.ajax({
             url: SELECT_API,
@@ -95,6 +102,17 @@
                     }
                 });
 
+                let value = layui.$("#is_show").attr("value");
+                let initValue = value ? value.split(",") : [];
+                layui.xmSelect.render({
+                    el: "#is_show",
+                    name: "is_show",
+                    initValue: initValue,
+                    data: [{"value":"1","name":"是"},{"value":"2","name":"否"}],
+                    model: {"icon":"hidden","label":{"type":"text"}},
+                    clickClose: true,
+                    radio: true,
+                })
 
                 // ajax返回失败
                 if (res.code) {

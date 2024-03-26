@@ -49,6 +49,7 @@ CREATE TABLE `pt_blog_article_cate`
     `keywords`    varchar(255) COLLATE utf8mb4_general_ci NOT NULL DEFAULT '' COMMENT '关键词',
     `description` varchar(255) COLLATE utf8mb4_general_ci NOT NULL DEFAULT '' COMMENT '描述',
     `sort`        int                                     NOT NULL DEFAULT '0' COMMENT '排序',
+    `is_show`     tinyint(1)                              NOT NULL DEFAULT '1' COMMENT '是否展示 1展示 2不展示',
     `created_at`  datetime                                         DEFAULT NULL COMMENT '创建时间',
     `updated_at`  datetime                                         DEFAULT NULL COMMENT '更新时间',
     `deleted_at`  datetime                                         DEFAULT NULL COMMENT '删除时间',

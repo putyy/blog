@@ -11,6 +11,7 @@ use plugin\admin\app\model\Base;
  * @property string $keywords 关键字
  * @property string $description 描述
  * @property integer $sort 排序
+ * @property integer $is_show 是否展示 1展示 2不展示
  * @property string $created_at 创建时间
  * @property string $updated_at 更新时间
  * @property string $deleted_at 删除时间

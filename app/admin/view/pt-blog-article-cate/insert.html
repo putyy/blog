@@ -42,6 +42,13 @@
                 </div>
             </div>
 
+            <div class="layui-form-item">
+                <label class="layui-form-label">是否展示</label>
+                <div class="layui-input-block">
+                    <div name="is_show" id="is_show" value="1" ></div>
+                </div>
+            </div>
+
         </div>
     </div>
 
@@ -70,7 +77,7 @@
     const INSERT_API = "/app/pt_blog/admin/pt-blog-article-cate/insert";
 
     //提交事件
-    layui.use(["form", "popup"], function () {
+    layui.use(["form", "jquery", "xmSelect", "popup"], function () {
         // 字段验证允许为空
         layui.form.verify({
             phone: [/(^$)|^1\d{10}$/, "请输入正确的手机号"],
@@ -80,6 +87,19 @@
             date: [/(^$)|^(\d{4})[-\/](\d{1}|0\d{1}|1[0-2])([-\/](\d{1}|0\d{1}|[1-2][0-9]|3[0-1]))*$/, "日期格式不正确"],
             identity: [/(^$)|(^\d{15}$)|(^\d{17}(x|X|\d)$)/, "请输入正确的身份证号"]
         });
+
+        let value = layui.$("#is_show").attr("value");
+        let initValue = value ? value.split(",") : [];
+        layui.xmSelect.render({
+            el: "#is_show",
+            name: "is_show",
+            initValue: initValue,
+            data: [{"value":"1","name":"是"},{"value":"2","name":"否"}],
+            model: {"icon":"hidden","label":{"type":"text"}},
+            clickClose: true,
+            radio: true,
+        })
+
         layui.form.on("submit(save)", function (data) {
             layui.$.ajax({
                 url: INSERT_API,

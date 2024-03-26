@@ -83,7 +83,13 @@
             }, {
                 title: "排序", align: "center",
                 field: "sort",
-            }, {
+            },  {
+                title: "是否展示", align: "center",
+                field: "is_show",
+                templet: function (d) {
+                    return d.is_show === 1 ? '是' : '否';
+                },
+            },{
                 title: "创建时间", align: "center",
                 field: "created_at",
             }, {
