@@ -2,9 +2,6 @@
 @section('content')
     <div class="max-w-3xl px-4 mx-auto sm:px-6 xl:max-w-5xl xl:px-0  w-full">
         <div class="pt-6 pb-8 space-y-2 md:space-y-5">
-            <h1 class="text-3xl font-extrabold leading-9 tracking-tight text-gray-900 dark:text-gray-100 sm:text-4xl sm:leading-10 md:text-6xl md:leading-14">
-                我的项目
-            </h1>
             {!! $global_config['project_html'] !!}
         </div>
         <main class="relative mb-auto">
@@ -16,26 +13,20 @@
                                 <div class="p-6">
                                     <div class="flex flex-row justify-between items-center">
                                         <div class="my-2">
-                                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
-                                                 stroke="currentColor"
-                                                 class="text-primary-color dark:text-primary-color-dark h-10 w-10 text-indigo-800">
+                                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" class="text-primary-color dark:text-primary-color-dark h-10 w-10 text-indigo-800">
                                                 <path d="M22 19a2 2 0 01-2 2H4a2 2 0 01-2-2V5a2 2 0 012-2h5l2 3h9a2 2 0 012 2z"></path>
                                             </svg>
                                         </div>
                                         <div class="flex flex-row justify-between">
                                             <div class="mx-1">
-                                                <a target="_blank" rel="noopener noreferrer" href="{{$project['url']}}"
-                                                   class="text-sm text-gray-500 transition hover:text-gray-600">
-                                                    <img src="/app/pt_blog/image/external.svg" class="w-6 h-6"></a>
+                                                <a target="_blank" rel="noopener noreferrer" href="{{$project['url']}}" class="text-sm text-gray-500 transition hover:text-gray-600">
+                                                    <img src="/app/pt_blog/image/external.svg" class="w-6 h-6">
                                                 </a>
                                             </div>
                                             @if($project['github'])
                                                 <div class="mx-1">
-                                                    <a target="_blank" rel="noopener noreferrer"
-                                                       href="https://github.com/{{$project['github']}}"
-                                                       class="text-sm text-gray-500 transition hover:text-gray-600">
-                                                        <img src="/app/pt_blog/image/github.svg"
-                                                             class="w-6 h-6"></a>
+                                                    <a target="_blank" rel="noopener noreferrer" href="https://github.com/{{$project['github']}}" class="text-sm text-gray-500 transition hover:text-gray-600">
+                                                        <img src="/app/pt_blog/image/github.svg" class="w-6 h-6">
                                                     </a>
                                                 </div>
                                             @endif
@@ -48,12 +39,8 @@
                                         {{$project['description']}}
                                     </p>
                                     <div class="flex flex-row justify-between">
-                                        <div class="text-gray-400 text-sm font-extralight">
-                                            {{str_replace(',', ' • ', $project['tags'])}}
-                                        </div>
-                                        <div class="text-gray-400 text-sm font-extralight hidden"
-                                             data-github="{{$project['github']}}">
-                                        </div>
+                                        <div class="text-gray-400 text-sm font-extralight">{{str_replace(',', ' • ', $project['tags'])}}</div>
+                                        <div class="text-gray-400 text-sm font-extralight hidden" data-github="{{$project['github']}}"></div>
                                     </div>
                                 </div>
                             </div>

@@ -1,6 +1,5 @@
 <div id="user-login" class="hidden fixed z-40 inset-0 overflow-y-auto flex items-center justify-center">
-    <div class="fixed inset-0 bg-black/20 backdrop-blur-sm dark:bg-slate-900/80"
-         id="user-login-layer"></div>
+    <div class="fixed inset-0 bg-black/20 backdrop-blur-sm dark:bg-slate-900/80" id="user-login-layer"></div>
     <div class="relative bg-white w-60 p-6 w-96 z-10 rounded-xl shadow-xl ring-1 ring-slate-900/5 dark:bg-slate-800 dark:highlight-white/10">
         <form id="user-login-form" class="flex flex-wrap text-base">
             <div id="user-login-head" class="w-full flex-none flex items-center justify-center py-1 ">
@@ -10,31 +9,20 @@
                 </div>
             </div>
             <div id="user-login-nick_name" class="w-full flex-none flex items-center py-1 border-b border-slate-200 dark:border-slate-200/5">
-                <input class="outline-none flex-grow border-0 dark:bg-slate-800 dark:highlight-white dark:hover:bg-slate-700 rounded-md p-2"
-                       placeholder="昵称"  type="text"
-                       name="nickname"
-                       value="{{$global_user['nickname']}}"/>
+                <input class="outline-none flex-grow border-0 dark:bg-slate-800 dark:highlight-white dark:hover:bg-slate-700 rounded-md p-2" placeholder="昵称" type="text" name="nickname" value="{{$global_user['nickname']}}"/>
             </div>
             <div id="user-login-username" class="w-full flex-none flex items-center py-1 border-b border-slate-200 dark:border-slate-200/5">
-                <input class="outline-none flex-grow border-0 dark:bg-slate-800 dark:highlight-white dark:hover:bg-slate-700 rounded-md p-2"
-                       name="username" placeholder="用户名" type="text"
-                       value="" />
+                <input class="outline-none flex-grow border-0 dark:bg-slate-800 dark:highlight-white dark:hover:bg-slate-700 rounded-md p-2" name="username" placeholder="用户名" type="text" value="" />
             </div>
             <div id="user-login-email" class="w-full flex-none flex items-center py-1 border-b border-slate-200  dark:border-slate-200/5">
-                <input class="outline-none flex-grow border-0 dark:bg-slate-800 dark:highlight-white dark:hover:bg-slate-700 rounded-md p-2"
-                       name="email" placeholder="邮箱" type="email"
-                       value=""/>
+                <input class="outline-none flex-grow border-0 dark:bg-slate-800 dark:highlight-white dark:hover:bg-slate-700 rounded-md p-2" name="email" placeholder="邮箱" type="email" value=""/>
             </div>
             <div id="user-login-code" class="w-full flex-none flex items-center py-1 border-b border-slate-200 dark:border-slate-200/5">
-                <input class="outline-none flex-grow border-0 dark:bg-slate-800 dark:highlight-white dark:hover:bg-slate-700 rounded-md p-2"
-                       name="code" placeholder="验证码" type="number"
-                       value=""/>
+                <input class="outline-none flex-grow border-0 dark:bg-slate-800 dark:highlight-white dark:hover:bg-slate-700 rounded-md p-2" name="code" placeholder="验证码" type="number" value=""/>
                 <button id="user-login-send-code" class="pl-2" type="button">获取邮箱验证码</button>
             </div>
             <div id="user-login-password" class="w-full flex-none flex items-center py-1 border-b border-slate-200 dark:border-slate-200/5">
-                <input class="outline-none flex-grow border-0 dark:bg-slate-800 dark:highlight-white dark:hover:bg-slate-700 rounded-md p-2"
-                       name="password" placeholder="密码" type="password"
-                       value=""/>
+                <input class="outline-none flex-grow border-0 dark:bg-slate-800 dark:highlight-white dark:hover:bg-slate-700 rounded-md p-2" name="password" placeholder="密码" type="password" value=""/>
             </div>
         </form>
         <div class="p-4 px-6 py-5 flex flex-col text-sm">
@@ -42,12 +30,8 @@
                 登录
             </div>
             <div class="flex flex-row justify-between py-2">
-                <button id="user-login-btn-register" data-type="register" type="button">
-                    没有账号？<a class="text-sky-500">点击注册</a>
-                </button>
-                <button id="user-login-reset" type="button">
-                    找回密码
-                </button>
+                <button id="user-login-btn-register" data-type="register" type="button">没有账号？<a class="text-sky-500">点击注册</a></button>
+                <button id="user-login-reset" type="button">找回密码</button>
             </div>
         </div>
         @if($global_config['github-client_id'])

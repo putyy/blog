@@ -37,8 +37,8 @@
     </div>
     @include('footer')
     {!! $global_config['common_html'] !!}
-    <div id="notice" class="hidden bg-white fixed top-1/4 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-50 py-5 px-5 text-slate-500 text-sm rounded-lg border border-gray-200 shadow-sm duration-300 dark:text-gray-400 dark:bg-gray-800 dark:border-gray-600 ">
-        And here's some amazing content. It's very engaging. Right?
+    <div id="notice" class="hidden bg-white fixed top-1/4 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-50 py-5 px-5 text-slate-500 text-sm rounded-lg border border-gray-200 shadow-sm duration-300 dark:text-gray-400 dark:bg-gray-800 dark:border-gray-600">
+        Hello World!
     </div>
     @include('login')
     <script src="/app/pt_blog/js/blog.js"></script>

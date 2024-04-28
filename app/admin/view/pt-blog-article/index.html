@@ -295,7 +295,7 @@
                 title: "新增",
                 shade: 0.1,
                 maxmin: true,
-                area: [common.isModile() ? "100%" : "80%", common.isModile() ? "100%" : "80%"],
+                area: ["100%", "100%"],
                 content: INSERT_URL
             });
         }
@@ -308,8 +308,8 @@
                 title: "修改",
                 shade: 0.1,
                 maxmin: true,
-                area: [common.isModile() ? "100%" : "80%", common.isModile() ? "100%" : "80%"],
-                content: UPDATE_URL + "?" + PRIMARY_KEY + "=" + value
+                area: ["100%", "100%"],
+                content: UPDATE_URL + "?" + PRIMARY_KEY + "=" + value,
             });
         }
 

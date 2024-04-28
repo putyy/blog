@@ -15,9 +15,9 @@ return [
     // 公共html 所有页面都会引入
     'common_html' => '',
     // 项目说明html
-    'project_html' => '<p class="text-lg leading-7 text-gray-500 dark:text-gray-400">项目说明html.</p>',
+    'project_html' => '<h1 class="text-3xl font-extrabold leading-9 tracking-tight text-gray-900 dark:text-gray-100 sm:text-4xl sm:leading-10 md:text-6xl md:leading-14">我的项目</h1><p class="text-lg leading-7 text-gray-500 dark:text-gray-400">项目说明html.</p>',
     // 友情链接说明html
-    'site_html' => '<p class="text-lg leading-7 text-gray-500 dark:text-gray-400">友情链接说明html.</p>',
+    'site_html' => '<h1 class="text-3xl font-extrabold leading-9 tracking-tight text-gray-900 dark:text-gray-100 sm:text-4xl sm:leading-10 md:text-6xl md:leading-14">我的好友</h1><p class="text-lg leading-7 text-gray-500 dark:text-gray-400">友情链接说明html.</p>',
     // 作者信息
     'author' => [
         // 名称

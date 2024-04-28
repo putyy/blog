@@ -3,9 +3,9 @@
 基于webman、webman-admin、tailwindcss、原生js 开发的响应式博客网站。
 
 ## 功能特性
-- [x] 个人主页、项目展示、友情链接、登录、注册、评论等
 - [x] 得益于tailwindcss，博客系统自适应pc、h5，支持一键切换主题色(黑暗模式)
 - [x] 后台功能模块包括：文章标签、文章分类、文章管理、导航设置、系统配置、友情链接、项目管理等
+- [x] 其他功能：个人主页、项目展示、友情链接、登录、注册、评论等
 
 ## 安装使用
 1. 通过webman-admin后台安装本插件及官方云邮件插件
@@ -29,4 +29,6 @@ Route::any('/me', [\plugin\pt_blog\app\controller\MeController::class, 'index'])
 ## 在线预览
 [https://www.putyy.com/](https://blog.putyy.com/)
 
-
+## 联系方式
+## 安装遇到问题的可以邮件找我
+邮箱: putyy@qq.com
