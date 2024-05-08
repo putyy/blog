@@ -465,6 +465,8 @@ function showLogin(type) {
 
         var commentTextareaObj = $("#comment-textarea")[0];
         if (commentTextareaObj){
+            var commentDescObj = $("#pt-comment-desc");
+            var commentTotal = parseInt(commentDescObj[0].getAttribute("data-total"))
             $(".comment-reply").on('click', function (event){
                 commentTextareaObj.setAttribute("data-pid", this.getAttribute("data-id"))
                 commentTextareaObj.setAttribute("data-nickname", this.getAttribute("data-nickname"))
@@ -519,6 +521,9 @@ function showLogin(type) {
                     commentTextareaObj.setAttribute("data-pid", 0)
                     commentTextareaObj.setAttribute("data-nickname", "")
                     commentTextareaObj.setAttribute("placeholder", "请输入你的评论")
+                    commentTotal += 1
+                    commentDescObj[0].innerHTML = commentTotal + '条回复 · ' + res.data.created_at
+                    commentDescObj.removeClass('hidden')
                 })
             })
 

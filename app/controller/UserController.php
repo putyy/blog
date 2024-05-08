@@ -69,7 +69,7 @@ class UserController extends BaseController
         if (!empty($user)) {
             return $this->error('该用户名或邮箱已被占用');
         }
-
+        $time = date('Y-m-d H:i:s');
         PtBlogUser::insert([
             'nickname' => $nickname,
             'username' => $username,
@@ -78,6 +78,9 @@ class UserController extends BaseController
             'email' => $email,
             'last_ip' => $request->getRealIp(),
             'join_ip' => $request->getRealIp(),
+            'login_time' => $time,
+            'created_at' => $time,
+            'updated_at' => $time,
         ]);
         return $this->success();
     }
@@ -243,6 +246,7 @@ class UserController extends BaseController
             $user_data = json_decode($user_info, true);
             $user = PtBlogUser::where('email', $user_data['email'])->first();
             if (empty($user)) {
+                $time = date('Y-m-d H:i:s');
                 $id = PtBlogUser::insertGetId([
                     'nickname' => $user_data['name'],
                     'username' => $user_data['name'],
@@ -251,6 +255,9 @@ class UserController extends BaseController
                     'email' => $user_data['email'],
                     'last_ip' => $request->getRealIp(),
                     'join_ip' => $request->getRealIp(),
+                    'login_time' => $time,
+                    'created_at' => $time,
+                    'updated_at' => $time,
                 ]);
                 $data = [
                     'uid' => $id,
@@ -268,6 +275,9 @@ class UserController extends BaseController
                     'avatar' => $user->avatar,
                     'email' => $user->email,
                 ];
+                $user->last_ip = $request->getRealIp();
+                $user->login_time = date('Y-m-d H:i:s');
+                $user->save();
             }
 
             $request->session()->set($this->sessionUserKey, $data);

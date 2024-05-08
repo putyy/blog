@@ -2,6 +2,7 @@
 
 namespace plugin\pt_blog\app\admin\controller;
 
+use support\Db;
 use support\Request;
 use support\Response;
 use plugin\pt_blog\app\model\PtBlogUser;
@@ -64,4 +65,20 @@ class PtBlogUserController extends BaseController
         return view('pt-blog-user/update');
     }
 
+    /**
+     * 删除
+     * @param Request $request
+     * @return Response
+     * @throws BusinessException
+     */
+    public function delete(Request $request): Response
+    {
+        $ids = $this->deleteInput($request);
+        PtBlogUser::whereIn('id', $ids)->update([
+            'username' => Db::raw('CONCAT(username,"_del")'),
+            'email' => Db::raw('CONCAT(email,"_del")'),
+        ]);
+        $this->doDelete($ids);
+        return $this->json(0);
+    }
 }

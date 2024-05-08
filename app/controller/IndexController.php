@@ -218,10 +218,9 @@ class IndexController extends BaseController
         $last_time = PtBlogArticleComment::where(['article_id' => $article_id])->orderBy('id', 'desc')->first('created_at')->created_at ?? '';
 
         if (empty($res['data'])) {
-            return [
+            return array_merge([
                 'last_time' => $last_time,
-                ...$res
-            ];
+            ], $res);
         }
 
         $idResArr = array_column($res['data'], null, 'id');
@@ -251,9 +250,9 @@ class IndexController extends BaseController
                 }
             }
         }
-        return [
+
+        return array_merge([
             'last_time' => $last_time,
-            ...$res
-        ];
+        ], $res);
     }
 }

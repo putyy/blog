@@ -41,7 +41,7 @@
         Hello World!
     </div>
     @include('login')
-    <script src="/app/pt_blog/js/blog.js"></script>
+    <script src="/app/pt_blog/js/blog.js?v={{$global_version}}}"></script>
     @yield('script')
 </body>
 </html>

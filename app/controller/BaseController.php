@@ -115,8 +115,9 @@ abstract class BaseController
             'email' => '',
         ];
         $session = session($this->sessionUserKey);
-        return view($template, [
+        return view($template, array_merge([
             'global_nav' => $nav,
+            'global_version' => config('plugin.pt_blog.app.version'),
             'global_tag' => $tag,
             'global_cate' => $cate,
             'global_site' => $site,
@@ -128,7 +129,6 @@ abstract class BaseController
             'head_title' => '',
             'head_keywords' => '',
             'head_description' => '',
-            ...$data,
-        ]);
+        ], $data));
     }
 }

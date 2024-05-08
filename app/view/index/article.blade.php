@@ -23,7 +23,7 @@
                 <div class="mt-3">
                     {!! $global_config['article_html'] !!}
                 </div>
-                <div class="{{$comments['total'] ? '' : 'hidden'}} text-md text-slate-400 pb-3 mb-3 border-b border-gray-100 dark:border-slate-700">{{$comments['total']}}条回复 · {{$comments['last_time']}}</div>
+                <div class="{{$comments['total'] ? '' : 'hidden'}} text-md text-slate-400 pb-3 mt-3 mb-3 border-b border-gray-100 dark:border-slate-700" id="pt-comment-desc" data-total="{{$comments['total']}}">{{$comments['total']}}条回复 · {{$comments['last_time']}}</div>
                 <div id="comments">
                     @foreach($comments['data'] as $k=>$comment)
                     <div class="comment">

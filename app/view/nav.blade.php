@@ -6,7 +6,7 @@
                     <a class="block md:inline-block pr-4 py-3 no-underline text-orange-600 hover:text-grey-darker font-bold text-xl">{{$global_config['name']}}</a>
                 </li>
                 <li>
-                    <a href="/" class="inline-block pr-4 py-3 no-underline text-grey-darkest hover:text-grey-darker font-semibold text-lg {{$select_nav==='home' ? 'text-indigo-600' : ''}}">Home</a>
+                    <a href="{{route('PtBlog.index')}}" class="inline-block pr-4 py-3 no-underline text-grey-darkest hover:text-grey-darker font-semibold text-lg {{$select_nav==='home' ? 'text-indigo-600' : ''}}">Home</a>
                 </li>
                 @foreach ($global_cate as $cate)
                 <li>
@@ -88,7 +88,7 @@
                     <a class="inline-block pr-4 py-3 no-underline text-orange-600 hover:text-grey-darker font-bold text-xl">{{$global_config['name']}}</a>
                 </li>
                 <li>
-                    <a href="/" class="inline-block px-4 py-3 no-underline text-grey-darkest hover:text-grey-darker font-bold text-lg {{$select_nav==='home' ? 'text-indigo-600' : ''}}">Home</a>
+                    <a href="{{route('PtBlog.index')}}" class="inline-block px-4 py-3 no-underline text-grey-darkest hover:text-grey-darker font-bold text-lg {{$select_nav==='home' ? 'text-indigo-600' : ''}}">Home</a>
                 </li>
                 @foreach ($global_cate as $cate)
                     <li>
