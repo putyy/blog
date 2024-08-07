@@ -75,6 +75,7 @@ class IndexController extends BaseController
         if (empty($data)) {
             return redirect(route('PtBlog.index'));
         }
+        PtBlogArticle::where(['id'=>$data['id']])->increment('views');
         $data = $data->toArray();
         return $this->view('index/article', [
             'data' => $data,
