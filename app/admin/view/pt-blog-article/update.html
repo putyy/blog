@@ -151,7 +151,7 @@
 
                 layui.use(["jquery", "xmSelect", "popup", "tinymce"], function () {
                     layui.$.ajax({
-                        url: "/app/pt_blog/admin/pt-blog-article-cate/select?format=tree&type=0,1",
+                        url: "/app/pt_blog/admin/pt-blog-article-cate/select?format=tree",
                         dataType: "json",
                         success: function (res) {
                             let value = layui.$("#cate_id").attr("value");
@@ -173,7 +173,7 @@
                     });
 
                     layui.$.ajax({
-                        url: "/app/pt_blog/admin/pt-blog-article-tag/select",
+                        url: "/app/pt_blog/admin/pt-blog-article-tag/select?format=tree",
                         dataType: "json",
                         success: function (res) {
                             let value = layui.$("#tag").attr("value");
