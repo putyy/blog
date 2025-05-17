@@ -1,9 +1,9 @@
-<footer class="w-full">
-    <div class="flex flex-col items-center mt-16">
-        <div class="flex mb-3 space-x-4 items-center">
+<footer class="w-full py-8">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-center items-center mb-6 space-x-6">
             {!! $global_config['link_html'] !!}
         </div>
-        <div class="flex mb-2 space-x-2 text-sm text-gray-500 dark:text-gray-400 flex-wrap justify-center">
+        <div class="text-center text-sm text-gray-500 dark:text-gray-400 flex flex-wrap justify-center gap-2">
             {!! $global_config['copyright_html'] !!}
         </div>
     </div>

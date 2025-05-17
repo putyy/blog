@@ -1,6 +1,6 @@
 @extends('index')
 @section('content')
-    <div class="max-w-3xl px-4 mx-auto sm:px-6 xl:max-w-5xl xl:px-0 w-full">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
         <div class="pt-6 pb-8 space-y-2 md:space-y-5">
             {!! $global_config['site_html'] !!}
         </div>
@@ -10,7 +10,7 @@
 
                     @foreach ($sites as $site)
                         <div class="p-4 w-full md:w-1/2">
-                            <div class="h-full overflow-hidden border-2 border-gray-200 rounded-md border-opacity-60 dark:border-gray-700">
+                            <div class="h-full overflow-hidden bg-white dark:bg-gray-800 rounded-lg shadow-sm border border-gray-200 dark:border-gray-700">
                                 <div class="p-4">
                                     <div class="flex flex-row justify-between items-center">
                                         <div class="my-2">

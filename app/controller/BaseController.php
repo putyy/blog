@@ -85,7 +85,7 @@ abstract class BaseController
                 ->toArray();
             $comment = PtBlogArticleComment::orderByDesc('id')
                 ->select(['id', 'article_id', 'content'])
-                ->limit(6)
+                ->limit(10)
                 ->get()
                 ->toArray();
             $tag = PtBlogArticleTag::withCount('articles')

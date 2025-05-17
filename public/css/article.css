@@ -1,0 +1,272 @@
+pre code.hljs {
+    display: block;
+    overflow-x: auto;
+    padding: 1em
+}
+
+code.hljs {
+    padding: 3px 5px
+}
+
+/*!
+  Theme: GitHub Dark
+  Description: Dark theme as seen on github.com
+  Author: github.com
+  Maintainer: @Hirse
+  Updated: 2021-05-15
+
+  Outdated base version: https://github.com/primer/github-syntax-dark
+  Current colors taken from GitHub's CSS
+*/
+.hljs {
+    margin: 1rem 0;
+    color: #c9d1d9;
+    background: #1e293b;
+    border-radius: 6px;
+}
+
+.hljs-doctag, .hljs-keyword, .hljs-meta .hljs-keyword, .hljs-template-tag, .hljs-template-variable, .hljs-type, .hljs-variable.language_ {
+    color: #ff7b72
+}
+
+.hljs-title, .hljs-title.class_, .hljs-title.class_.inherited__, .hljs-title.function_ {
+    color: #d2a8ff
+}
+
+.hljs-attr, .hljs-attribute, .hljs-literal, .hljs-meta, .hljs-number, .hljs-operator, .hljs-selector-attr, .hljs-selector-class, .hljs-selector-id, .hljs-variable {
+    color: #79c0ff
+}
+
+.hljs-meta .hljs-string, .hljs-regexp, .hljs-string {
+    color: #a5d6ff
+}
+
+.hljs-built_in, .hljs-symbol {
+    color: #ffa657
+}
+
+.hljs-code, .hljs-comment, .hljs-formula {
+    color: #8b949e
+}
+
+.hljs-name, .hljs-quote, .hljs-selector-pseudo, .hljs-selector-tag {
+    color: #7ee787
+}
+
+.hljs-subst {
+    color: #c9d1d9
+}
+
+.hljs-section {
+    color: #1f6feb;
+    font-weight: 700
+}
+
+.hljs-bullet {
+    color: #f2cc60
+}
+
+.hljs-emphasis {
+    color: #c9d1d9;
+    font-style: italic
+}
+
+.hljs-strong {
+    color: #c9d1d9;
+    font-weight: 700
+}
+
+.hljs-addition {
+    color: #aff5b4;
+    background-color: #033a16
+}
+
+.hljs-deletion {
+    color: #ffdcd7;
+    background-color: #67060c
+}
+
+code::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+code::-webkit-scrollbar-track {
+    background-color: #18212f;
+}
+
+code::-webkit-scrollbar-thumb {
+    background-color: #5e5e5e;
+}
+
+code::-webkit-scrollbar-thumb:hover {
+    background-color: #9d9d9d;
+}
+
+/* 全局 Prose 设置 */
+.prose {
+    max-width: 100%;
+    /*color: #4a5568;*/
+}
+.dark .prose {
+    /*color: #e2e8f0;*/
+}
+
+/* 段落 */
+.prose p {
+    font-size: 1.125rem;
+    line-height: 1.75;
+    margin-bottom: 1.5rem;
+    /*color: #4a5568;*/
+}
+
+.dark .prose p {
+    /*color: #e2e8f0;*/
+}
+
+/* 标题 */
+.prose h1 {
+    font-size: 2.25rem;
+    font-weight: 700;
+    font-family: serif;
+    letter-spacing: -0.025em;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    /*color: #1a202c;*/
+}
+.dark .prose h1 {
+    /*color: #f7fafc;*/
+}
+.prose h2 {
+    font-size: 1.875rem;
+    font-weight: 600;
+    font-family: serif;
+    letter-spacing: -0.025em;
+    margin-top: 1.5rem;
+    margin-bottom: 0.75rem;
+    /*color: #1a202c;*/
+}
+
+.dark .prose h2 {
+    /*color: #f7fafc;*/
+}
+.prose h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-top: 1.25rem;
+    margin-bottom: 0.5rem;
+    /*color: #1a202c;*/
+}
+.dark .prose h3 {
+    /*color: #f7fafc;*/
+}
+
+/* 代码块 */
+/* 确保代码块不溢出 */
+.prose pre {
+    overflow-x: auto;
+    white-space: pre-wrap;
+    word-break: break-all;
+    background-color: #f7fafc; /* 浅色模式背景 */
+    border-radius: 0.5rem;
+    padding: 1rem;
+    margin-bottom: 1.5rem;
+}
+.dark .prose pre {
+    background-color: #2d3748; /* 暗色模式背景 */
+}
+.prose pre code {
+    background: transparent;
+    padding: 0;
+}
+
+/* 列表 */
+.prose ul,
+.prose ol {
+    margin-bottom: 1.5rem;
+    /*padding-left: 2rem;*/
+    font-size: 1.125rem;
+    line-height: 1.75;
+    /*color: #4a5568;*/
+}
+.dark .prose ul,
+.dark .prose ol {
+    /*color: #e2e8f0;*/
+}
+.prose ul li,
+.prose ol li {
+    margin-bottom: 0.5rem;
+}
+.prose ul li::marker {
+    /*color: #5a67d8;*/
+}
+.dark .prose ul li::marker {
+    color: #a3bffa;
+}
+
+/* 引用 */
+.prose blockquote {
+    border-left: 4px solid #5a67d8;
+    background-color: #f7fafc;
+    padding: 1rem 1.5rem;
+    margin: 1.5rem 0;
+    font-style: italic;
+    /*color: #4a5568;*/
+    border-radius: 0.25rem;
+}
+.dark .prose blockquote {
+    border-left-color: #a3bffa;
+    background-color: #2d3748;
+    /*color: #e2e8f0;*/
+}
+
+.prose blockquote p {
+    margin-bottom: unset;
+}
+
+/* 链接 */
+.prose a {
+    color: #5a67d8;
+    text-decoration: underline;
+    transition: color 0.2s ease-in-out;
+}
+.prose a:hover {
+    color: #4c51bf;
+}
+.dark .prose a {
+    color: #a3bffa;
+}
+.dark .prose a:hover {
+    color: #c3dafe;
+}
+
+/* 表格 */
+.prose table {
+    width: 100%;
+    margin-bottom: 1.5rem;
+    border-collapse: collapse;
+}
+.prose th,
+.prose td {
+    padding: 0.75rem;
+    border: 1px solid #e2e8f0;
+    font-size: 1rem;
+    /*color: #4a5568;*/
+}
+.prose th {
+    background-color: #f7fafc;
+    font-weight: 600;
+}
+.dark .prose th,
+.dark .prose td {
+    border-color: #4a5568;
+    /*color: #e2e8f0;*/
+}
+.dark .prose th {
+    background-color: #2d3748;
+}
+
+/* 处理动态内容的内联样式 */
+.prose [style*="display: none"] {
+    display: block !important;
+}

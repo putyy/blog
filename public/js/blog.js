@@ -140,13 +140,6 @@ $.post = function (url, data, callback, isJson) {
     };
     xhr.send(data);
 };
-$.notice = function (msg) {
-    $('#notice')[0].innerHTML = msg
-    $('#notice').removeClass('hidden')
-    setTimeout(() => {
-        $('#notice').addClass('hidden')
-    }, 1500)
-}
 
 function search() {
     var keyword = $("#search-val")[0].value
@@ -234,8 +227,6 @@ function showLogin(type) {
 (function () {
     createBgCanvas()
     document.addEventListener("DOMContentLoaded", function (event) {
-        // 这里是在 DOM 加载完成后执行的代码
-
         $("#left-dialog-close2").on('click', function (event) {
             $("#left-dialog").addClass('hidden')
         })
@@ -303,7 +294,7 @@ function showLogin(type) {
         $("#user-login-out").on('click', function (event) {
             $.post('/app/pt_blog/user/loginOut', {}, function (res) {
                 if (res.code === 200) {
-                    $.notice('退出成功');
+                    message.info("退出成功");
                     location.reload();
                 }
             })
@@ -328,14 +319,14 @@ function showLogin(type) {
             var formData = new FormData(from);
             for ([name, value] of formData.entries()) {
                 if (name === 'email' && !value) {
-                    $.notice('邮箱不能为空');
+                    message.error("邮箱不能为空");
                     return;
                 }
             }
 
             $.post('/app/pt_blog/user/sendEmail', formData, function (res) {
                 if (res.code === 500) {
-                    $.notice(res.msg);
+                    message.error(res.msg);
                     return;
                 }
                 sendTime = 60
@@ -362,44 +353,44 @@ function showLogin(type) {
                 case 'login':
                     for ([name, value] of formData.entries()) {
                         if (name === 'username' && !/^[a-zA-Z0-9]{5,10}$/.test(value)) {
-                            $.notice('用户名只能包含字母数字且控制在5-10位');
+                            message.error("用户名只能包含字母数字且控制在5-10位");
                             return;
                         }
                         if (name === 'password' && !/^[a-zA-Z0-9]{5,10}$/.test(value)) {
-                            $.notice('密码只能包含字母数字且控制在5-10位');
+                            message.error("密码只能包含字母数字且控制在5-10位");
                             return;
                         }
                     }
                     $.post('/app/pt_blog/user/login', formData, function (res) {
                         if (res.code === 500) {
-                            $.notice(res.msg);
+                            message.error(res.msg);
                             return;
                         }
-                        $.notice('登录成功');
+                        message.info("登录成功");
                         location.reload();
                     }, false)
                     break;
                 case 'reset':
                     for ([name, value] of formData.entries()) { // 遍历数据
                         if (name === 'email' && !value) {
-                            $.notice('邮箱不能为空');
+                            message.error("邮箱不能为空");
                             return;
                         }
                         if (name === 'password' && !/^[a-zA-Z0-9]{5,10}$/.test(value)) {
-                            $.notice('密码只能包含字母数字且控制在5-10位');
+                            message.error("密码只能包含字母数字且控制在5-10位");
                             return;
                         }
                         if (name === 'code' && !/^[0-9]{5}$/.test(value)) {
-                            $.notice('请输入5位验证码');
+                            message.error("请输入5位验证码");
                             return;
                         }
                     }
                     $.post('/app/pt_blog/user/reset', formData, function (res) {
                         if (res.code === 500) {
-                            $.notice(res.msg);
+                            message.error(res.msg);
                             return;
                         }
-                        $.notice('重置成功');
+                        message.info("重置成功");
                         sendTime = 0
                         clearInterval(sendTimeInterval)
                         sendTimeInterval = null
@@ -410,53 +401,53 @@ function showLogin(type) {
                 case 'register':
                     for ([name, value] of formData.entries()) { // 遍历数据
                         if (name === 'nickname' && !value) {
-                            $.notice('昵称不能为空');
+                            message.error("昵称不能为空");
                             return;
                         }
                         if (name === 'username' && !value) {
-                            $.notice('用户名不能为空');
+                            message.error("用户名不能为空");
                             return;
                         }
                         if (name === 'email' && !value) {
-                            $.notice('邮箱不能为空');
+                            message.error("邮箱不能为空");
                             return;
                         }
                         if (name === 'password' && !/^[a-zA-Z0-9]{5,10}$/.test(value)) {
-                            $.notice('密码只能包含字母数字且控制在5-10位');
+                            message.error("密码只能包含字母数字且控制在5-10位");
                             return;
                         }
                         if (name === 'code' && !/^[0-9]{5}$/.test(value)) {
-                            $.notice('请输入5位验证码');
+                            message.error("请输入5位验证码");
                             return;
                         }
                     }
                     $.post('/app/pt_blog/user/register', formData, function (res) {
                         if (res.code === 500) {
-                            $.notice(res.msg);
+                            message.error(res.msg);
                             return;
                         }
-                        $.notice('注册成功');
+                        message.info("注册成功");
                         showLogin('login')
                     }, false);
                     break;
                 case 'update':
                     for ([name, value] of formData.entries()) { // 遍历数据
                         if (name === 'nickname' && !value) {
-                            $.notice('昵称不能为空');
+                            message.error("昵称不能为空");
                             return;
                         }
 
                         if (name === 'password' && value && !/^[a-zA-Z0-9]{5,10}$/.test(value)) {
-                            $.notice('密码只能包含字母数字且控制在5-10位');
+                            message.error("密码只能包含字母数字且控制在5-10位");
                             return;
                         }
                     }
                     $.post('/app/pt_blog/user/update', formData, function (res) {
                         if (res.code === 500) {
-                            $.notice(res.msg);
+                            message.error(res.msg);
                             return;
                         }
-                        $.notice('更新成功');
+                        message.info("更新成功");
                         location.reload();
                     }, false);
                     break;
@@ -476,7 +467,7 @@ function showLogin(type) {
 
             $("#comment-send").on('click', function (event){
                 if (!window.global_user.uid){
-                    $.notice("请先登录");
+                    message.error("请先登录");
                     return;
                 }
                 var data = {
@@ -486,13 +477,13 @@ function showLogin(type) {
                 };
 
                 if (!data.content){
-                    $.notice("内容不能为空");
+                    message.error("内容不能为空");
                     return;
                 }
 
                 $.post('/app/pt_blog/index/comment', data, function (res) {
                     if (res.code === 500) {
-                        $.notice(res.msg);
+                        message.error(res.msg);
                         return;
                     }
                     var html = '<div class="comment">\n' +
